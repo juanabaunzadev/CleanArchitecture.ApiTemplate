@@ -4,5 +4,7 @@
     <Project Path="CleanArchitecture.ApiTemplate.Domain/CleanArchitecture.ApiTemplate.Domain.csproj" />
   </Folder>
   <Folder Name="/Infrastructure/" />
-  <Folder Name="/Tests/" />
+  <Folder Name="/Tests/">
+    <Project Path="CleanArchitecture.ApiTemplate.Tests/CleanArchitecture.ApiTemplate.Tests.csproj" />
+  </Folder>
 </Solution>
