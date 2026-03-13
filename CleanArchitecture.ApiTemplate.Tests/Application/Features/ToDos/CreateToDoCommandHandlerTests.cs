@@ -31,13 +31,13 @@ public class CreateToDoCommandHandlerTests
         var command = new CreateToDoCommand("Test ToDo", "Test Description");
         var toDo = new ToDo(command.Name, command.Description);
         
-        _repositoryToDo.AddAsync(Arg.Any<ToDo>()).Returns(toDo);
+        _repositoryToDo.Add(Arg.Any<ToDo>()).Returns(toDo);
 
         // Act
         var result = await _handler.Handle(command, CancellationToken.None);
 
         // Assert
-        await _repositoryToDo.Received(1).AddAsync(Arg.Any<ToDo>());
+        await _repositoryToDo.Received(1).Add(Arg.Any<ToDo>());
         await _unitOfWork.Received(1).CommitAsync();
         Assert.AreEqual(toDo.Id, result);
     }
@@ -48,13 +48,13 @@ public class CreateToDoCommandHandlerTests
         // Arrange
         var command = new CreateToDoCommand("Test ToDo", "Test Description");
         
-        _repositoryToDo.AddAsync(Arg.Any<ToDo>()).Throws<Exception>();
+        _repositoryToDo.Add(Arg.Any<ToDo>()).Throws<Exception>();
 
         // Act
         await Assert.ThrowsAsync<Exception>(() => _handler.Handle(command, CancellationToken.None));
 
         // Assert
-        await _repositoryToDo.Received(1).AddAsync(Arg.Any<ToDo>());
+        await _repositoryToDo.Received(1).Add(Arg.Any<ToDo>());
         await _unitOfWork.Received(1).RollbackAsync();
 }
 }

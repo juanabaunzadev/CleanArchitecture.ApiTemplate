@@ -26,7 +26,7 @@ public class CreateToDoCommandHandler : IRequestHandler<CreateToDoCommand, Guid>
         
         try
         {
-            var result = await _repositoryToDo.AddAsync(todo);
+            var result = await _repositoryToDo.Add(todo);
             await _unitOfWork.CommitAsync();
             
             return result.Id;

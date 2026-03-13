@@ -4,7 +4,9 @@
     <Project Path="CleanArchitecture.ApiTemplate.Application/CleanArchitecture.ApiTemplate.Application.csproj" Id="778e4c1d-ce6a-420e-9163-eef528a89030" />
     <Project Path="CleanArchitecture.ApiTemplate.Domain/CleanArchitecture.ApiTemplate.Domain.csproj" />
   </Folder>
-  <Folder Name="/Infrastructure/" />
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/CleanArchitecture.ApiTemplate.Persistence/CleanArchitecture.ApiTemplate.Persistence.csproj" />
+  </Folder>
   <Folder Name="/Tests/">
     <Project Path="CleanArchitecture.ApiTemplate.Tests/CleanArchitecture.ApiTemplate.Tests.csproj" />
   </Folder>
