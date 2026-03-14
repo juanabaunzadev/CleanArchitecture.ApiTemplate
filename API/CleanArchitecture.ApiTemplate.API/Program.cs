@@ -1,3 +1,4 @@
+using CleanArchitecture.ApiTemplate.API.Middlewares;
 using CleanArchitecture.ApiTemplate.Application;
 using CleanArchitecture.ApiTemplate.Persistence;
 
@@ -31,6 +32,7 @@ else
     app.UseHttpsRedirection();
 }
 
+app.UseExceptionHandlingMiddleware();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
